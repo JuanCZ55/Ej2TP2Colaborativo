@@ -6,8 +6,8 @@ package ej2tp2colaborativo;
 
 /**
  *
- * @author juanz
+ * @author Usuario
  */
-public class Prueba23 {
+public class ReloFij {
     
 }
