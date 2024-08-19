@@ -45,6 +45,13 @@ public class Reloj {
         this.numSerie = numSerie;
     }
     
-    
-    
+    public void limpiarPantalla(){
+        System.out.println("Pantalla Limpia");
+    }
+    public void incrementarHora(){
+        System.out.println("incrementar una hora ");
+    }
+    public void incrementarDia(){
+        System.out.println("Incrementar Dia");
+    }
 }
