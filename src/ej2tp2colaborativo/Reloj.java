@@ -90,11 +90,11 @@ public class Reloj {
         //Ingresar los valores a incrementar de la fecha y a su vez incrementarla
         System.out.println("\n--------------------------------------");
         System.out.println("Digite los acontinuacion en cuanto desea incrementar los datos de la fecha");
-        System.out.print("Día: ");
+        System.out.print("Dia: ");
         auxDia = auxDia.plusDays(entrada.nextInt());
         System.out.print("Mes: ");
         auxDia = auxDia.plusMonths(entrada.nextInt());
-        System.out.print("Año: ");
+        System.out.print("Anio: ");
         auxDia = auxDia.plusYears(entrada.nextInt());
         
         //----------------------------------------------------------------------
