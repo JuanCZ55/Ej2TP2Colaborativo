@@ -1,15 +1,23 @@
 
 package ej2tp2colaborativo;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Scanner;
+
 public class Reloj {
     private String hora, dia, modelo;
     private long numSerie;
+    private Scanner entrada;
 
     public Reloj(String hora, String dia, String modelo, long numSerie) {
         this.hora = hora;
         this.dia = dia;
         this.modelo = modelo;
         this.numSerie = numSerie;
+        entrada = new Scanner(System.in);
     }
     
 
@@ -49,9 +57,50 @@ public class Reloj {
         System.out.println("Pantalla Limpia");
     }
     public void incrementarHora(){
-        System.out.println("incrementar una hora ");
+        LocalDate auxDia = LocalDate.parse(dia);
+        LocalTime auxHora = LocalTime.parse(hora);
+        LocalDateTime fechaHora = LocalDateTime.of(auxDia, auxHora);
+        //----------------------------------------------------------------------
+        //Ingresar los valores a incrementar de la hora y a su vez incrementarla
+        System.out.println("\n--------------------------------------");
+        System.out.println("Digite los acontinuacion en cuanto desea incrementar los datos del tiempo");
+        System.out.print("Hora: ");
+        fechaHora = fechaHora.plusHours(entrada.nextInt());
+        System.out.print("Minuto: ");
+        fechaHora = fechaHora.plusMinutes(entrada.nextInt());
+        
+        //----------------------------------------------------------------------
+        //Separar el LocalDate y el LocalTime de LocalDateTime (por cuestion de estetia al mostrar por pantalla)
+        LocalDate newFecha = fechaHora.toLocalDate();
+        LocalTime newHora = fechaHora.toLocalTime();
+        
+        //----------------------------------------------------------------------
+        System.out.println("Nueva fecha: " + newFecha);
+        System.out.println("Nueva hora: " + newHora);
+        
+        //----------------------------------------------------------------------
+        dia = newFecha.toString();
+        hora = newHora.toString();
+        
     }
     public void incrementarDia(){
-        System.out.println("Incrementar Dia");
+        LocalDate auxDia = LocalDate.parse(dia);
+        
+        //----------------------------------------------------------------------
+        //Ingresar los valores a incrementar de la fecha y a su vez incrementarla
+        System.out.println("\n--------------------------------------");
+        System.out.println("Digite los acontinuacion en cuanto desea incrementar los datos de la fecha");
+        System.out.print("Día: ");
+        auxDia = auxDia.plusDays(entrada.nextInt());
+        System.out.print("Mes: ");
+        auxDia = auxDia.plusMonths(entrada.nextInt());
+        System.out.print("Año: ");
+        auxDia = auxDia.plusYears(entrada.nextInt());
+        
+        //----------------------------------------------------------------------
+        System.out.println("Fecha incrementada: "+auxDia);
+        
+        //----------------------------------------------------------------------
+        dia= auxDia.toString();
     }
 }

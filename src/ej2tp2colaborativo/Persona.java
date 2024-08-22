@@ -4,7 +4,8 @@ package ej2tp2colaborativo;
 
 public class Persona {
   private String nombre, apellido;
-  private int edad, altura; 
+  private int edad, altura;
+  private Reloj reloj;
 
     public Persona(String nombre, String apellido, int edad, int altura) {
         this.nombre = nombre;
@@ -44,6 +45,16 @@ public class Persona {
     public void setAltura(int altura) {
         this.altura = altura;
     }
+
+    public Reloj getReloj() {
+        return reloj;
+    }
+
+    public void setReloj(Reloj reloj) {
+        this.reloj = reloj;
+    }
+    
+    
    
     
     
